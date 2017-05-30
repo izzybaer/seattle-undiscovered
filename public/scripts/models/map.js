@@ -2,6 +2,8 @@ var map;
 var infoWindow;
 var service;
 var places = [];
+var newPlaces = []
+var category;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -20,29 +22,27 @@ function initMap() {
 
   // The idle event is a debounced event, so we can query & listen without
   // throwing too many requests at the server.
-  map.addListener('idle', performSearch);
-}
+  map.addListener('idle', function() {performSearch('restaurant')});
+  }
 
-function performSearch() {
+
+function performSearch(category) {
   var request = {
     bounds: map.getBounds(),
     // keyword: 'best view'
-    type: 'store'
+    type: category
   };
-  service.radarSearch(request, callback);
+  service.nearbySearch(request, callback);
 }
 function callback(results, status) {
   places = results
   if (status !== google.maps.places.PlacesServiceStatus.OK) {
     console.error(status);
-    console.log(result)
     return;
   }
-
   for (var i = 0, result; result = results[i]; i++) {
     addMarker(result);
-  }
-}
+  }}
 
 function addMarker(place) {
   var marker = new google.maps.Marker({
@@ -67,15 +67,4 @@ function addMarker(place) {
       infoWindow.open(map, marker);
     });
   });
-}
-var newPlaces = []
-for (var i = 0; i < places.length; i++){
-service.getDetails(places[i], function(result, status) {
-  if (status !== google.maps.places.PlacesServiceStatus.OK) {
-    console.error(status);
-    return;
-  }
-  console.log(result)
-  newPlaces.push(result)
-})
 }
