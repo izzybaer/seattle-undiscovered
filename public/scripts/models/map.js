@@ -1,9 +1,9 @@
 'use strict';
 
-
 var map;
 var infoWindow;
 var service;
+var category;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -11,21 +11,21 @@ function initMap() {
     zoom: 15,
     styles: []
   });
-
+  category = 'restaurant'
   infoWindow = new google.maps.InfoWindow();
   service = new google.maps.places.PlacesService(map);
 
   // The idle event is a debounced event, so we can query & listen without
   // throwing too many requests at the server.
-  map.addListener('idle', performSearch);
+  map.addListener('idle', function() {performSearch(category)});
 }
 
-function performSearch() {
+function performSearch(category) {
   var request = {
     bounds: map.getBounds(),
-    keyword: 'store'
+    type: category
   };
-  service.radarSearch(request, callback);
+  service.nearbySearch(request, callback);
 }
 
 function callback(results, status) {
@@ -34,7 +34,9 @@ function callback(results, status) {
     return;
   }
   for (var i = 0, result; result = results[i]; i++) {
-    addMarker(result);
+    if (result.rating < 4.2){
+      addMarker(result);
+    }
   }
 }
 
@@ -55,6 +57,7 @@ function addMarker(place) {
         console.error(status);
         return;
       }
+
       infoWindow.setContent(`<p> ${result.name} <br />  ${result.formatted_address} <br /> rating: ${result.rating} stars </p>`);
       infoWindow.open(map, marker);
     });
