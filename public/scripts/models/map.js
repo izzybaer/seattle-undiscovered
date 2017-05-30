@@ -1,8 +1,6 @@
 var map;
 var infoWindow;
 var service;
-var places = [];
-var newPlaces = []
 var category;
 
 function initMap() {
@@ -16,33 +14,34 @@ function initMap() {
     //   stylers: [{ visibility: 'off' }]
     // }]
   });
-
+  category = 'restaurant'
   infoWindow = new google.maps.InfoWindow();
   service = new google.maps.places.PlacesService(map);
 
   // The idle event is a debounced event, so we can query & listen without
   // throwing too many requests at the server.
-  map.addListener('idle', function() {performSearch('restaurant')});
-  }
+  map.addListener('idle', function() {performSearch(category)});
+}
 
 
 function performSearch(category) {
   var request = {
     bounds: map.getBounds(),
-    // keyword: 'best view'
     type: category
   };
   service.nearbySearch(request, callback);
 }
 function callback(results, status) {
-  places = results
   if (status !== google.maps.places.PlacesServiceStatus.OK) {
     console.error(status);
     return;
   }
   for (var i = 0, result; result = results[i]; i++) {
-    addMarker(result);
-  }}
+    if (result.rating < 4.2){
+      addMarker(result);
+    }
+  }
+}
 
 function addMarker(place) {
   var marker = new google.maps.Marker({
