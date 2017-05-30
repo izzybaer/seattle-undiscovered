@@ -1,3 +1,5 @@
+'use strict';
+
 var map;
 var infoWindow;
 var service;
@@ -7,12 +9,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 47.60616, lng: -122.328111},
     zoom: 15,
-    // styles: [{
-    //   stylers: [{ visibility: 'simplified' }]
-    // }, {
-    //   elementType: 'labels',
-    //   stylers: [{ visibility: 'off' }]
-    // }]
+    styles: []
   });
   category = 'restaurant'
   infoWindow = new google.maps.InfoWindow();
@@ -23,7 +20,6 @@ function initMap() {
   map.addListener('idle', function() {performSearch(category)});
 }
 
-
 function performSearch(category) {
   var request = {
     bounds: map.getBounds(),
@@ -31,6 +27,7 @@ function performSearch(category) {
   };
   service.nearbySearch(request, callback);
 }
+
 function callback(results, status) {
   if (status !== google.maps.places.PlacesServiceStatus.OK) {
     console.error(status);
@@ -55,14 +52,13 @@ function addMarker(place) {
   });
 
   google.maps.event.addListener(marker, 'click', function() {
-    console.log(place)
     service.getDetails(place, function(result, status) {
       if (status !== google.maps.places.PlacesServiceStatus.OK) {
         console.error(status);
         return;
       }
-      console.log(result)
-      infoWindow.setContent(`<p>${result.name} <br />${result.formatted_address} <br /> rating: ${result.rating}</p>`);
+
+      infoWindow.setContent(`<p> ${result.name} <br />  ${result.formatted_address} <br /> rating: ${result.rating} stars </p>`);
       infoWindow.open(map, marker);
     });
   });
