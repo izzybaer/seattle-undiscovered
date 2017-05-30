@@ -20,26 +20,28 @@
     </header>
     <h1>Seattle Undiscovered!</h1>
       <div id ='map'></div>
-      <select id="type" onchange="filterMarkers(this.value);">
-        <option value="">Please select category</option>
-        <option value="activities">Activities</option>
-        <option value="restaurants">Restaurants</option>
-        <option value="nightlife">Nightlife</option>
-        <option value="points-of-interest">Points of Interests</option>
-      </select>
+      <form>
+        <select id="type">
+          <option value="">Please select category</option>
+          <option value="natural_feature">Natural Features</option>
+          <option value="restaurant">Restaurants</option>
+          <option value="night_club">Nightlife</option>
+          <option value="point_of_interest">Points of Interests</option>
+        </select>
+        <button id="submit"type="submit">Submit</button>
+    </form>
     <div id='places'></div>
     <div id='more'></div>
     <section id="about">
       <h1>Meet the team!!</h1>
     </section>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEuwXVOudtZfocfm6sM1ENewl3CTW7vNo&libraries=places&callback=initMap"
-   async defer>
-   </script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEuwXVOudtZfocfm6sM1ENewl3CTW7vNo&libraries=places&callback=initMap"
+   async defer>
+   </script>
 
-   <script src="data/places-data.js"></script>
    <script src="scripts/models/map.js"></script>
   </body>
 </html>

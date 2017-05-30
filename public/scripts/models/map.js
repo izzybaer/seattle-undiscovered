@@ -4,6 +4,7 @@ var map;
 var infoWindow;
 var service;
 var category;
+var gmarkers = [];
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -50,6 +51,7 @@ function addMarker(place) {
       scaledSize: new google.maps.Size(10, 17)
     }
   });
+gmarkers.push(marker)
 
   google.maps.event.addListener(marker, 'click', function() {
     service.getDetails(place, function(result, status) {
@@ -58,8 +60,22 @@ function addMarker(place) {
         return;
       }
 
-      infoWindow.setContent(`<p> ${result.name} <br />  ${result.formatted_address} <br /> rating: ${result.rating} stars </p>`);
+      infoWindow.setContent(`<p> ${result.name} <br />  ${result.formatted_address} <br /> rating: ${result.rating} stars ${result.types}</p>`);
       infoWindow.open(map, marker);
     });
   });
 }
+
+function removeMarkers(){
+  for(var i = 0; i < gmarkers.length; i++){
+    gmarkers[i].setMap(null);
+  }
+}
+
+$('form').submit(function(event) {
+  event.preventDefault();
+  var selectedCategory = document.getElementById('type');
+  category = selectedCategory.options[selectedCategory.selectedIndex].value;
+  removeMarkers();
+  map.addListener('idle', function() {performSearch(category)});
+})
