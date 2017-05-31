@@ -6,6 +6,19 @@ var service;
 var category;
 var gmarkers = [];
 
+var iconBase = 'img/png/';
+var icons = {
+  restaurant: {
+    icon: iconBase + 'Food_4.png'
+  },
+  night_club: {
+    icon: iconBase + 'Beer_4.png'
+  },
+  point_of_interest: {
+    icon: iconBase + 'Flag_4.png'
+  }
+};
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 47.60616, lng: -122.328111},
@@ -35,7 +48,7 @@ function callback(results, status) {
     return;
   }
   for (var i = 0, result; result = results[i]; i++) {
-    if (result.rating < 4.2){
+    if (result.rating < 4){
       addMarker(result);
     }
   }
@@ -45,10 +58,11 @@ function addMarker(place) {
   var marker = new google.maps.Marker({
     map: map,
     position: place.geometry.location,
-    icon: {
-      url: 'https://developers.google.com/maps/documentation/javascript/images/circle.png',
+    icon:
+    {
+         url: icons[category].icon,
       anchor: new google.maps.Point(10, 10),
-      scaledSize: new google.maps.Size(10, 17)
+      scaledSize: new google.maps.Size(35, 35)
     }
   });
   gmarkers.push(marker)
@@ -59,7 +73,7 @@ function addMarker(place) {
         console.error(status);
         return;
       }
-
+      console.log(result)
       infoWindow.setContent(`<p> ${result.name} <br />  ${result.formatted_address} <br /> rating: ${result.rating} stars ${result.types}</p>`);
       infoWindow.open(map, marker);
     });
@@ -77,5 +91,6 @@ $('form').submit(function(event) {
   var selectedCategory = document.getElementById('type');
   category = selectedCategory.options[selectedCategory.selectedIndex].value;
   removeMarkers();
+  performSearch(category)
   map.addListener('idle', function() {performSearch(category)});
 })
