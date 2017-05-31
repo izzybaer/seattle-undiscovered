@@ -51,7 +51,7 @@ function addMarker(place) {
       scaledSize: new google.maps.Size(10, 17)
     }
   });
-gmarkers.push(marker)
+  gmarkers.push(marker)
 
   google.maps.event.addListener(marker, 'click', function() {
     service.getDetails(place, function(result, status) {

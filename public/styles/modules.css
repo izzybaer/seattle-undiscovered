@@ -9,5 +9,9 @@ html, body {
   margin: 10%;
   padding: 25% 0;
   border: 10px solid green;
-  height: 100%;
+  height: 20%;
 }
+
+/*#map-page {
+  display: none;
+}*/
