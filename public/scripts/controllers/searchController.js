@@ -7,7 +7,11 @@ var app = app || {};
   const searchController = {};
 
   searchController.index = function() {
-
+    $('#map').show();
+    $('#home').hide();
+    $('#about').hide();
+    initMap()
+    // $('#map').fadeIn();
   }
 
 

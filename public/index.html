@@ -18,20 +18,23 @@
         </ul>
       </nav>
     </header>
-    <h1>Seattle Undiscovered!</h1>
-      <div id ='map'></div>
-      <form>
-        <select id="type">
-          <option value="">Please select category</option>
-          <option value="natural_feature">Natural Features</option>
-          <option value="restaurant">Restaurants</option>
-          <option value="night_club">Nightlife</option>
-          <option value="point_of_interest">Points of Interests</option>
-        </select>
-        <button id="submit"type="submit">Submit</button>
-    </form>
-    <div id='places'></div>
-    <div id='more'></div>
+    <section id="home">
+      <h1>Seattle Something</h1>
+      <img src="http://www.thephotoargus.com/wp-content/uploads/2015/08/kerry-park3.jpg">
+    </section>
+      <section id="map-page">
+        <div id ='map'></div>
+        <form>
+          <select id="type">
+            <option value="">Please select category</option>
+            <option value="natural_feature">Natural Features</option>
+            <option value="restaurant">Restaurants</option>
+            <option value="night_club">Nightlife</option>
+            <option value="point_of_interest">Points of Interests</option>
+          </select>
+          <button id="submit"type="submit">Submit</button>
+        </form>
+      </section>
     <section id="about">
       <h1>Meet the team!!</h1>
     </section>
@@ -43,5 +46,9 @@
    </script>
 
    <script src="scripts/models/map.js"></script>
+   <script src="scripts/controllers/searchController.js"></script>
+   <script src="scripts/controllers/aboutController.js"></script>
+   <script src="scripts/controllers/homeController.js"></script>
+   <script src="scripts/controllers/routes.js"></script>
   </body>
 </html>

@@ -1,13 +1,15 @@
 'use strict';
+
 var app = app || {};
 
 (function(module) {
   const aboutController = {};
 
-  aboutController.aboutPageInit = function() {
+  aboutController.index = function() {
 
-    $(`.tab-content`).hide();
-    $(`#about`).fadeIn();
+    $('#map').hide();
+    $('#home').hide();
+    $('#about').fadeIn();
 
   }
   module.aboutController = aboutController;

@@ -1,9 +1,10 @@
 'use strict';
+
 var app = app || {};
 
 
-page('/', );
-page('/about',);
-page('/search', );
+page('/', app.homeController.index);
+page('/about', app.aboutController.index);
+page('/search', app.searchController.index);
 
 page();
