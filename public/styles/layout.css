@@ -1,4 +1,10 @@
+
+* {
+  margin: 0 auto;
+  font-family: 'Karma', serif;
+
 .infopic {
   width: 300px;
   height: 300px;
+
 }
