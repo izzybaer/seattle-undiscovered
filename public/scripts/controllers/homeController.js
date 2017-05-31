@@ -7,8 +7,9 @@ var app = app || {};
   const homeController = {};
 
   homeController.index = function() {
-
+    $('#about').hide();
     $('#map').hide();
+    $('form').hide();
     $('#home').fadeIn();
   }
 

@@ -1,9 +1,11 @@
 * {
   margin: 0 auto;
-
-
 }
 
 img #izzy {
   border-radius: 12px;
+}
+
+body{
+  background-color: rgb(88, 88, 88);
 }

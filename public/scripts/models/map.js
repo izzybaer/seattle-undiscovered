@@ -14,8 +14,14 @@ var icons = {
   night_club: {
     icon: iconBase + 'Beer_4.png'
   },
-  point_of_interest: {
-    icon: iconBase + 'Flag_4.png'
+  park: {
+    icon: iconBase + 'Flower_4.png'
+  },
+  cafe: {
+    icon: iconBase + 'Coffee_5.png'
+  },
+  bar:  {
+    icon: iconBase + 'Beer_4.png'
   }
 };
 
@@ -60,7 +66,7 @@ function addMarker(place) {
     position: place.geometry.location,
     icon:
     {
-         url: icons[category].icon,
+      url: icons[category].icon,
       anchor: new google.maps.Point(10, 10),
       scaledSize: new google.maps.Size(35, 35)
     }

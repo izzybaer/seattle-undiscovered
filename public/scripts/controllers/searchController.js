@@ -8,6 +8,7 @@ var app = app || {};
 
   searchController.index = function() {
     $('#map').show();
+    $('form').fadeIn();
     $('#home').hide();
     $('#about').hide();
     initMap()
