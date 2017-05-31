@@ -75,7 +75,7 @@ function addMarker(place) {
         return;
       }
       console.log(result)
-      console.log(result.photos)
+      $('#review')
       if (result.photos === undefined){
         infoWindow.setContent(`<img class="infopic" src="http://corbitlibrary.org/wp-content/uploads/2014/06/Sad-face.jpg"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /></p> `);
         infoWindow.open(map, marker);
