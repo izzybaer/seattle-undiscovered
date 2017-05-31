@@ -84,9 +84,9 @@ function addMarker(place) {
         infoWindow.setContent(`<img class="infopic" src="http://corbitlibrary.org/wp-content/uploads/2014/06/Sad-face.jpg"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /></p> `);
         infoWindow.open(map, marker);
       }
-      else {infoWindow.setContent(`<img class="infopic" src="${result.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 300})}"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /></p> `);
-      infoWindow.open(map, marker);
-}
+      else {infoWindow.setContent(`<img class="infopic" src="${result.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200})}"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /><a href="${result.website}">Website</a></p> `);
+        infoWindow.open(map, marker);
+      }
     });
   });
 }
