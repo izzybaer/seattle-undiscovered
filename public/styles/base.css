@@ -3,7 +3,8 @@
 
 
 }
-
-img #izzy {
-  border-radius: 12px;
+.about-photo{
+  width: 27%;
+  display: inline-block;
+  margin: 30px;
 }
