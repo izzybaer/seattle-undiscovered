@@ -1,4 +1,8 @@
-#
+* {
+  margin: 0 auto;
+  font-family: 'Karma', serif;
+}
+
 html, body {
   height: 100%;
   margin: 0;
