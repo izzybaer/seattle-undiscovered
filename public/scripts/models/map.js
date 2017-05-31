@@ -80,7 +80,7 @@ function addMarker(place) {
         return;
       }
       console.log(result)
-      infoWindow.setContent(`<p> ${result.name} <br />  ${result.formatted_address} <br /> rating: ${result.rating} stars ${result.types}</p>`);
+      infoWindow.setContent(`<p> ${result.name} <br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /> ${result.photos[0].html_attributions[0]}</p>`);
       infoWindow.open(map, marker);
     });
   });
