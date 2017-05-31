@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
+app.get('*', (request, response) => response.sendFile('index.html', {root: './public'}));
 app.listen(PORT, function(){
   console.log('This is the port you are working on' + PORT)
 })
