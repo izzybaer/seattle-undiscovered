@@ -45,6 +45,9 @@ function callback(results, status) {
     return;
   }
   for (var i = 0, result; result = results[i]; i++) {
+    // if (result.photos[0] === 'undefined'){
+    //   return
+    // }
     if (result.rating < 4){
       addMarker(result);
     }
@@ -62,6 +65,7 @@ function addMarker(place) {
       scaledSize: new google.maps.Size(35, 35)
     }
   });
+
   gmarkers.push(marker)
 
   google.maps.event.addListener(marker, 'click', function() {
@@ -71,8 +75,14 @@ function addMarker(place) {
         return;
       }
       console.log(result)
-      infoWindow.setContent(`<p> ${result.name} <br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /> ${result.photos[0].html_attributions[0]}</p>`);
+      console.log(result.photos)
+      if (result.photos === undefined){
+        infoWindow.setContent(`<img class="infopic" src="http://corbitlibrary.org/wp-content/uploads/2014/06/Sad-face.jpg"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /></p> `);
+        infoWindow.open(map, marker);
+      }
+      else {infoWindow.setContent(`<img class="infopic" src="${result.photos[0].getUrl({'maxWidth': 300, 'maxHeight': 300})}"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /></p> `);
       infoWindow.open(map, marker);
+}
     });
   });
 }
