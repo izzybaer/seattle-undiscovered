@@ -75,7 +75,8 @@ li {
 
 .image-logo-small {
   position: absolute;
-  top: 55%;
+  margin-left:46%;
+  top: 18%;
   text-align: center;
   z-index: -50;
   font-size: 3em;
@@ -105,4 +106,12 @@ li {
 
 #home {
   height:100%;
+}
+
+#about p {
+  text-align:center;
+}
+
+#about h1, h3 {
+  top: 20%;
 }
