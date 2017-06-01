@@ -1,9 +1,50 @@
-.infopic{
-  width: 200px;
-  height: 200px;
-}
 
 * {
   margin: 0 auto;
   font-family: 'Karma', serif;
+}
+
+.infopic {
+  width: 200px;
+  height: 200px;
+}
+
+@media screen and (min-width: 451px) and (max-width: 1199px){
+  .logo-div {
+    top: 9%;
+    height: 7%;
+  }
+
+  .image-logo {
+    position:absolute;
+    top: 9%;
+    margin-left: 26%;
+    text-align: center;
+    z-index: -50;
+    font-size: 6vw;
+    font-family: 'Karma', serif;
+  }
+
+  .image-logo-small {
+    top:23%;
+    position: absolute;
+    margin-left: 43%;
+    text-align:center;
+    z-index: -50;
+    font-size: 4vw;
+    font-family: 'Karma', serif;
+  }
+
+  img {
+    height: 705px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .image-container {
+    background-image: url(img/seattleSkyline.jpg);
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+}
 
