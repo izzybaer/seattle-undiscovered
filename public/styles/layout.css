@@ -70,7 +70,6 @@ border: 2px solid black;
   }
 
   ul {
-    margin-left: -134px;
     margin-top: 24px;
     text-align: left;
   }
@@ -78,26 +77,37 @@ border: 2px solid black;
   .clearfix a {
     color: white;
   }
+
   #type {
     height: 30px;
     width: 172px;
   }
   .form {
-    width: 220px;
-    padding-top: 210px;
+    width: 260px;
+    padding-top: 17%;
     margin: 0 auto;
     float: none;
   }
 
   .search{
-    position:inherit;
-    margin:0 auto;
+    position: inherit;
+    margin: 0 auto;
     width: 8em;
-    padding-top:8%;
-    z-index:-50;
+    padding-top: 3%;
+    z-index: -50;
     font-size: 6vw;
     font-family: 'Karma', serif;
     color: white;
+  }
+
+  .flex{
+    display: inline-flex;
+  }
+
+  .tswift{
+    height: 87px;
+    width: 100%;
+    background-color: black;
   }
 }
 
