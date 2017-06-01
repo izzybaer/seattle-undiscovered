@@ -39,6 +39,7 @@ border: 2px solid black;
     z-index: -50;
     font-size: 6vw;
     font-family: 'Karma', serif;
+    color: white;
   }
 
   .image-logo-small {
@@ -49,6 +50,7 @@ border: 2px solid black;
     z-index: -50;
     font-size: 4vw;
     font-family: 'Karma', serif;
+    color: white;
   }
 
   .image-container img {
@@ -76,6 +78,10 @@ border: 2px solid black;
     margin-left: -134px;
     margin-top: 24px;
     text-align: left;
+  }
+
+  .clearfix a {
+    color: white;
   }
 }
 
