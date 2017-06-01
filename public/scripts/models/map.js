@@ -100,7 +100,6 @@ function findLowestReview(result){
       lowestReviewRating = result.reviews[i].rating
       lowestReview = result.reviews[i]
     }
-
   }
   return lowestReview
 }
