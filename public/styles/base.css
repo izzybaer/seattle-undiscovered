@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Karma', serif;
-  color: white;
   text-decoration: none;
   /*border: pink solid 2px;*/
 
@@ -120,6 +119,7 @@ li {
   top: 20%;
 }
 
+
 .clearfix {
   overflow: auto;
   zoom: 1;
@@ -127,4 +127,7 @@ li {
 
 .logo-div {
   height: 7%;
+
+p {
+  color: black;
 }
