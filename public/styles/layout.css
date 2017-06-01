@@ -109,6 +109,21 @@ border: 2px solid black;
     width: 100%;
     background-color: black;
   }
+
+  #about h1{
+    padding-top: 4%;
+    margin: 0 auto;
+    width: 500px;
+    font-size: 5vw;
+    font-family: 'Karma', serif;
+    color: white;
+  }
+  #about h3{
+    width: 565px;
+  font-size: 3vw;
+  font-family: 'Karma', serif;
+  color: white;
+  }
 }
 
 #line {

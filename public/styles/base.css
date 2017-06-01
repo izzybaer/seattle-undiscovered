@@ -154,3 +154,7 @@ li {
   max-width: 75%;
   margin-left: 13%;
 }
+
+flex div p {
+  color: white;
+}
