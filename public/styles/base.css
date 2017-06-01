@@ -8,7 +8,7 @@
 }
 .about-photo {
   width: 27%;
-  display: inline-block;
+  display: inline;
   margin: 30px;
 }
 
@@ -26,7 +26,8 @@ html, body, div.image-container, img {
 
 img {
   height: auto;
-  max-width:100%;
+  max-width: 75%;
+  margin-left: 13%;
 }
 
 .main-nav {
@@ -141,4 +142,9 @@ li {
 
 .clearfix a {
   color: white;
+}
+
+.about-us{
+  margin-top: 10%;
+  padding: 3%;
 }
