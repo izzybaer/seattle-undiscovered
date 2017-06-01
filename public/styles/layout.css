@@ -1,12 +1,28 @@
 
+.form{
+  margin-top: 5%;
+  margin-left: 45%;
+  float: left;
+}
+
+
+#map{
+  float: left;
+}
 * {
   margin: 0 auto;
   font-family: 'Karma', serif;
 }
 
-.infopic {
-  width: 200px;
-  height: 200px;
+
+#review{
+    float: left;
+    background-color: antiquewhite;
+    width: 93%;
+    margin-left: 1%;
+    border-radius: 10px;
+    padding: 1%;
+border: 2px solid black;
 }
 
 @media only screen and (min-width: 451px){
@@ -61,4 +77,13 @@
     margin-top: 24px;
     text-align: left;
   }
+}
+
+#line {
+    height: 0px;
+    width: 100%;
+    background-color: black;
+    margin: 3% 0% 1% 0%;
+    float: left;
+    border: 1px solid black;
 }

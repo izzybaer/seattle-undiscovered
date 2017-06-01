@@ -45,7 +45,10 @@ function callback(results, status) {
     return;
   }
   for (var i = 0, result; result = results[i]; i++) {
-    if (result.rating < 4){
+
+
+    if (result.rating < 3.6){
+
       addMarker(result);
     }
   }
@@ -72,16 +75,33 @@ function addMarker(place) {
         return;
       }
       console.log(result)
-      console.log(result.photos)
+      $('#review').empty()
+      let profilePicUrl = findLowestReview(result).profile_photo_url
+      let reviewText = findLowestReview(result).text
+      let reviewRating = findLowestReview(result).rating
+      $('#review').append(`<img class="profile-pic" src="${profilePicUrl}"> ${reviewText} Rating: ${reviewRating}`)
       if (result.photos === undefined){
-        infoWindow.setContent(`<img class="infopic" src="http://corbitlibrary.org/wp-content/uploads/2014/06/Sad-face.jpg"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /></p> `);
+        infoWindow.setContent(`<img class="infopic" src="http://corbitlibrary.org/wp-content/uploads/2014/06/Sad-face.jpg"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /><a href="${result.website}" target="_blank">Website</a><br /><a href="${result.url}" target="_blank">Open in Google Maps</a></p> `);
         infoWindow.open(map, marker);
       }
-      else {infoWindow.setContent(`<img class="infopic" src="${result.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200})}"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /><a href="${result.website}">Website</a></p> `);
+      else {infoWindow.setContent(`<img class="infopic" src="${result.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150})}"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /><a href="${result.website}" target="_blank">Website</a><br /><a href="${result.url}" target="_blank">Open in Google Maps</a></p>`);
         infoWindow.open(map, marker);
       }
     });
+    $('#review').show();
   });
+}
+
+function findLowestReview(result){
+  let lowestReview = result.reviews[0]
+  let lowestReviewRating = result.reviews[0].rating
+  for(var i = 0; i < result.reviews.length; i++){
+    if(result.reviews[i].rating < lowestReviewRating){
+      lowestReview = result.reviews[i]
+    }
+
+  }
+  return lowestReview
 }
 
 function removeMarkers(){
