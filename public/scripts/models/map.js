@@ -97,9 +97,9 @@ function findLowestReview(result){
   let lowestReviewRating = result.reviews[0].rating
   for(var i = 0; i < result.reviews.length; i++){
     if(result.reviews[i].rating < lowestReviewRating){
+      lowestReviewRating = result.reviews[i].rating
       lowestReview = result.reviews[i]
     }
-
   }
   return lowestReview
 }
