@@ -7,7 +7,7 @@ var app = app || {};
 
   aboutController.index = function() {
 
-    $('#map').hide();
+    $('#map-page').hide();
     $('#home').hide();
     $('#about').fadeIn();
 
