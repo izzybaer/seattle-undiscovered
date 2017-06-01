@@ -1,14 +1,3 @@
-
-.form{
-  margin-top: 7%;
-  margin-left: 45%;
-  float: left;
-}
-
-
-#map{
-  float: left;
-}
 * {
   margin: 0 auto;
   font-family: 'Karma', serif;
@@ -81,6 +70,27 @@ border: 2px solid black;
   }
 
   .clearfix a {
+    color: white;
+  }
+  #type {
+    height: 30px;
+    width: 172px;
+  }
+  .form {
+    width: 220px;
+    padding-top: 210px;
+    margin: 0 auto;
+    float: none;
+  }
+
+  .search{
+    position:inherit;
+    margin:0 auto;
+    width: 595px;
+    padding-top:8%;
+    z-index:-50;
+    font-size: 6vw;
+    font-family: 'Karma', serif;
     color: white;
   }
 }
