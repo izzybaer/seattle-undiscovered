@@ -81,10 +81,10 @@ function addMarker(place) {
       let reviewRating = findLowestReview(result).rating
       $('#review').append(`<img class="profile-pic" src="${profilePicUrl}"> ${reviewText} Rating: ${reviewRating}`)
       if (result.photos === undefined){
-        infoWindow.setContent(`<img class="infopic" src="http://corbitlibrary.org/wp-content/uploads/2014/06/Sad-face.jpg"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /><a href="${result.website}" target="_blank">Website</a><br /><a href="${result.url}" target="_blank">Open in Google Maps</a></p> `);
+        infoWindow.setContent(`<img class="infopic" src="http://corbitlibrary.org/wp-content/uploads/2014/06/Sad-face.jpg"><p class="info-window-text"><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /><a href="${result.website}" target="_blank">Website</a><br /><a href="${result.url}" target="_blank">Open in Google Maps</a></p> `);
         infoWindow.open(map, marker);
       }
-      else {infoWindow.setContent(`<img class="infopic" src="${result.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150})}"><p><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /><a href="${result.website}" target="_blank">Website</a><br /><a href="${result.url}" target="_blank">Open in Google Maps</a></p>`);
+      else {infoWindow.setContent(`<img class="infopic" src="${result.photos[0].getUrl({'maxWidth': 150, 'maxHeight': 150})}"><p class="info-window-text"><b>${result.name}</b><br />  ${result.formatted_address} <br /> Rating: ${result.rating} stars <br /> Phone number: ${result.formatted_phone_number} <br /><a href="${result.website}" target="_blank">Website</a><br /><a href="${result.url}" target="_blank">Open in Google Maps</a></p>`);
         infoWindow.open(map, marker);
       }
     });
