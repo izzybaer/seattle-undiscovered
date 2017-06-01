@@ -8,8 +8,8 @@ var app = app || {};
 
   homeController.index = function() {
     $('#about').hide();
-    $('#map').hide();
-    $('form').hide();
+    $('#map-page').hide();
+    // $('form').hide();
     $('#home').fadeIn();
   }
 
