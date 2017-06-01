@@ -11,7 +11,7 @@ var icons = {
   bar:  {icon: iconBase + 'Beer_4.png'},
   cafe: {icon: iconBase + 'Coffee_5.png'},
   night_club: {icon: iconBase + 'Beer_4.png'},
-  park: {  icon: iconBase + 'Flower_4.png'},
+  park: {icon: iconBase + 'Flower_4.png'},
   restaurant: {icon: iconBase + 'Food_4.png'},
   point_of_interest: {icon: iconBase + 'Flag_4.png'}
 };
@@ -97,6 +97,7 @@ function findLowestReview(result){
   let lowestReviewRating = result.reviews[0].rating
   for(var i = 0; i < result.reviews.length; i++){
     if(result.reviews[i].rating < lowestReviewRating){
+      lowestReviewRating = result.reviews[i].rating
       lowestReview = result.reviews[i]
     }
 
