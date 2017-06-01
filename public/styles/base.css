@@ -4,6 +4,8 @@
   font-family: 'Karma', serif;
   color: white;
   text-decoration: none;
+  /*border: pink solid 2px;*/
+
 }
 .about-photo {
   width: 27%;
@@ -24,9 +26,8 @@ html, body, div.image-container, img {
 }
 
 img {
-  height: 100%;
-  width: 100%;
-  object-fit : cover;
+  height: auto;
+  max-width:100%;
 }
 
 .main-nav {
@@ -52,6 +53,7 @@ img {
 }
 
 ul {
+  margin-left: 28px;
   margin-top: 24px;
   text-align: left;
 }
@@ -61,25 +63,26 @@ li {
   list-style-type: none;
   display: inline-block;
   width: auto;
+  margin-top: 10px;
 }
 
 .image-logo {
   position: absolute;
-  top: 9%;
-  margin-left:33%;
+  top: 18%;
+  margin-left:18%;
   text-align: center;
   z-index: -50;
-  font-size: 3.5em;
+  font-size: 8vw;
   font-family: 'Karma', serif;
 }
 
 .image-logo-small {
   position: absolute;
-  margin-left:46%;
-  top: 18%;
+  margin-left:41%;
+  top: 28%;
   text-align: center;
   z-index: -50;
-  font-size: 3em;
+  font-size: 5vw;
   font-family: 'Karma', serif;
 }
 
@@ -99,9 +102,10 @@ li {
 }
 
 .image-container img {
-  position: absolute;
+  position: relative;
   z-index: 0;
   bottom: 0;
+  height:604px;
 }
 
 #home {
@@ -114,4 +118,13 @@ li {
 
 #about h1, h3 {
   top: 20%;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+.logo-div {
+  height: 7%;
 }

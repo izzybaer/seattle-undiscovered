@@ -45,9 +45,6 @@ function callback(results, status) {
     return;
   }
   for (var i = 0, result; result = results[i]; i++) {
-    // if (result.photos[0] === 'undefined'){
-    //   return
-    // }
     if (result.rating < 4){
       addMarker(result);
     }
