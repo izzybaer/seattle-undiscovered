@@ -9,7 +9,7 @@
   height: 200px;
 }
 
-@media screen and (min-width: 451px) and (max-width: 1199px){
+@media only screen and (min-width: 451px){
   .logo-div {
     top: 9%;
     height: 7%;
@@ -17,7 +17,7 @@
 
   .image-logo {
     position:absolute;
-    top: 9%;
+    top: 16%;
     margin-left: 26%;
     text-align: center;
     z-index: -50;
@@ -26,7 +26,7 @@
   }
 
   .image-logo-small {
-    top:23%;
+    top:31%;
     position: absolute;
     margin-left: 43%;
     text-align:center;
@@ -35,9 +35,9 @@
     font-family: 'Karma', serif;
   }
 
-  img {
+  .image-container img {
     height: 705px;
-    width: auto;
+    width: 100vw;
     max-width: 100%;
   }
 
@@ -45,5 +45,20 @@
     background-image: url(img/seattleSkyline.jpg);
     background-repeat: no-repeat;
     background-size:contain;
+  }
+
+  li {
+    margin-right: 23px;
+    list-style-type: none;
+    display: inline-block;
+    width: auto;
+    margin-top: 10px;
+    font-size: 2.5vh;
+  }
+
+  ul {
+    margin-left: -134px;
+    margin-top: 24px;
+    text-align: left;
   }
 }
