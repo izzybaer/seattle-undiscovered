@@ -26,8 +26,7 @@ html, body, div.image-container, img {
 
 img {
   height: auto;
-  max-width: 75%;
-  margin-left: 13%;
+  max-width: 100%;
 }
 
 .main-nav {
@@ -147,4 +146,10 @@ li {
 .about-us{
   margin-top: 10%;
   padding: 3%;
+}
+
+.about-photo img {
+  height: auto;
+  max-width: 75%;
+  margin-left: 13%;
 }
