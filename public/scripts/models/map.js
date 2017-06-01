@@ -47,7 +47,7 @@ function callback(results, status) {
   for (var i = 0, result; result = results[i]; i++) {
 
 
-    if (result.rating < 3.6){
+    if (result.rating < 3.9){
 
       addMarker(result);
     }

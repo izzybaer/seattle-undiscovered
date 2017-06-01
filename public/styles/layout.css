@@ -23,7 +23,7 @@ border: 2px solid black;
   .about-photo {
     width: 27%;
     display: inline-block;
-    margin: 30px;
+    margin: 5% 0 0 5%;;
   }
 
   .image-logo {
@@ -49,7 +49,7 @@ border: 2px solid black;
   }
 
   .image-container img {
-    height: 705px;
+    height: 900px;
     width: 100vw;
     max-width: 100%;
   }
@@ -113,13 +113,13 @@ border: 2px solid black;
   #about h1{
     padding-top: 4%;
     margin: 0 auto;
-    width: 500px;
+    width: 7em;
     font-size: 5vw;
     font-family: 'Karma', serif;
     color: white;
   }
   #about h3{
-    width: 565px;
+    width: 13em;
   font-size: 3vw;
   font-family: 'Karma', serif;
   color: white;
