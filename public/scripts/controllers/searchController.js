@@ -8,12 +8,10 @@ var app = app || {};
 
   searchController.index = function() {
     $('#map-page').show();
-    // $('form').fadeIn();
     $('#home').hide();
     $('#about').hide();
     initMap()
     $('#review').hide();
-    // $('#map').fadeIn();
   }
 
 

@@ -9,7 +9,6 @@ var app = app || {};
   homeController.index = function() {
     $('#about').hide();
     $('#map-page').hide();
-    // $('form').hide();
     $('#home').fadeIn();
   }
 
