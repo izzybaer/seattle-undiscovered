@@ -80,7 +80,8 @@ border: 2px solid black;
 
   #type {
     height: 30px;
-    width: 172px;
+    width: 176px;
+    font-size: 1em;
   }
   .form {
     width: 260px;
