@@ -49,7 +49,7 @@ border: 2px solid black;
   }
 
   .image-container img {
-    height: 900px;
+    height: 38em;
     width: 100vw;
     max-width: 100%;
   }
